@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Case Details</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h3>Case Details</h3>
+    <ul>
+      <li>Parties: {{ details.parties }}</li>
+      <li>Filing Date: {{ details.filing_date }}</li>
+      <li>Next Hearing: {{ details.next_hearing }}</li>
+      <li>
+        Latest Order PDF:
+        {% if details.latest_order %}
+          <a href="{{ details.latest_order }}" target="_blank">Download</a>
+        {% else %}
+          Unavailable
+        {% endif %}
+      </li>
+    </ul>
+    <a href="/" class="btn btn-secondary">Back</a>
+  </div>
+</body>
+</html>
